@@ -1,4 +1,4 @@
-# Example installation on Ubuntu 22.04.03 LTS with Apache2, APCu, redis, and MariaDB behind an NGINX proxy, no Docker, no Snap
+# Example installation on Ubuntu 22.04.03 LTS with Apache2, APCu, redis, and MariaDB, no Docker, no Snap
 
 ## Who is this for?
 This is an example installation for Ubuntu users who want to host a Nextcloud instance bare metal. No Docker, no Snap.
@@ -198,7 +198,7 @@ insert:
 ```bash
 <VirtualHost *:80>
   DocumentRoot /var/www/nextcloud/
-  ServerName  cloud.x_youromain.com
+  ServerName  cloud.x_yourdomain.com
 
   <Directory /var/www/nextcloud/>
     Require all granted
@@ -264,7 +264,7 @@ sudo -u www-data php occ  maintenance:install \
 --data-dir='/var/www/nextcloud/data'
 ```
 
-If we navigate now to https://cloud.x_youromain.com, we should see a warning that try to connect over an untrusted domain. 
+If we navigate now to https://cloud.x_yourdomain.com, we should see a warning that try to connect over an untrusted domain. 
 
 ## PHP config settings
 Edit config.php file. 
@@ -273,7 +273,7 @@ sudo nano /var/www/nextcloud/config/config.php
 ```
 Set the trusted_domains array
 ```bash
-  0 => 'cloud.x_youromain.com',
+  0 => 'cloud.x_yourdomain.com',
 ```
 while we are at it, you could also add these settings to match your locales:
 ```bash
@@ -288,7 +288,7 @@ update the settings by
 cd /var/www/nextcloud/
 sudo -u www-data php occ maintenance:update:htaccess
 ```
-Now you should be able to access cloud.x_youromain.com without untrusted domain warning. If the warning is still there, try to access it over your mobile networt to rule out an error in your local DNS settings. 
+Now you should be able to access cloud.x_yourdomain.com without untrusted domain warning. If the warning is still there, try to access it over your mobile networt to rule out an error in your local DNS settings. 
 
 ## Set up crontab
 We wanna use crontab instead of AJAX.
