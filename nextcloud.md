@@ -253,7 +253,7 @@ sudo service apache2 reload
 ```
 
 ## Install Nextcloud 
-You can install Nextcloud with that command or by using the WebPage.
+You can install Nextcloud with this command or by using the WebPage.
 
 ```bash
 cd /var/www/nextcloud/
