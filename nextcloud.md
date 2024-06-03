@@ -288,7 +288,7 @@ update the settings by
 cd /var/www/nextcloud/
 sudo -u www-data php occ maintenance:update:htaccess
 ```
-Now you should be able to access cloud.x_yourdomain.com without untrusted domain warning. If the warning is still there, try to access it over your mobile networt to rule out an error in your local DNS settings. 
+Now you should be able to access cloud.x_yourdomain.com without untrusted domain warning. If the warning is still there, try to access it over your mobile network to rule out an error in your local DNS settings. 
 
 ## Set up crontab
 We wanna use crontab instead of AJAX.
